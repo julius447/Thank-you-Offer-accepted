@@ -21,51 +21,21 @@
 
       <img class="logo" src="../shared/assets/Ampy-logo.png" alt="Ampy" width="701" height="201">
 
-      <!-- living teal check: glassy disc + halo pulse + tick draw -->
-      <div class="check" aria-hidden="true">
-        <span class="check__halo"></span>
-        <span class="check__halo check__halo--2"></span>
-        <svg class="check__svg" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle class="check__disc" cx="60" cy="60" r="46" fill="url(#glass)"/>
-          <circle class="check__rim" cx="60" cy="60" r="46" fill="none" stroke="url(#rim)" stroke-width="2"/>
-          <path class="check__tick" d="M82 47 L53.5 76 L38 60.5" fill="none" stroke="#00A991" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <radialGradient id="glass" cx="0.42" cy="0.35" r="0.75">
-              <stop offset="0" stop-color="#7fe8cf" stop-opacity="0.42"/>
-              <stop offset="0.6" stop-color="#00a991" stop-opacity="0.22"/>
-              <stop offset="1" stop-color="#00a991" stop-opacity="0.10"/>
-            </radialGradient>
-            <linearGradient id="rim" x1="18" y1="16" x2="104" y2="108" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
-              <stop offset="1" stop-color="#00a991" stop-opacity="0.25"/>
-            </linearGradient>
-          </defs>
-        </svg>
+      <div class="intro">
+        <!-- the current Ampy check (pale-mint disc + teal tick), animated: tick draws in -->
+        <div class="check" aria-hidden="true">
+          <span class="check__halo"></span>
+          <svg class="check__svg" width="120" height="120" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect class="check__disc" x="12" y="12" width="150" height="150" rx="75" fill="#55FF9A" fill-opacity="0.2" stroke="#ffffff" stroke-opacity="0.18" stroke-width="24"/>
+            <path class="check__tick" d="M118.582 66.3379L76.862 108.207L57.8984 89.1754" stroke="#00A991" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <header class="hero">
+          <h1 class="hero__title">Din förfrågan har blivit mottagen!</h1>
+          <p class="hero__sub">En av våra rådgivare kommer att kontakta dig inom kort.</p>
+        </header>
       </div>
-
-      <header class="hero">
-        <h1 class="hero__title">Din förfrågan har blivit mottagen!</h1>
-        <p class="hero__sub">En av våra rådgivare kommer att kontakta dig inom kort.</p>
-      </header>
-
-      <!-- signature block: expectation ladder -->
-      <section class="ladder" aria-labelledby="ladder-title">
-        <p class="ladder__eyebrow" id="ladder-title">Nästa steg</p>
-        <ol class="ladder__list">
-          <li class="step" style="--i:0">
-            <span class="step__node" aria-hidden="true"><span>1</span></span>
-            <span class="step__text">Vi går igenom din förfrågan</span>
-          </li>
-          <li class="step" style="--i:1">
-            <span class="step__node" aria-hidden="true"><span>2</span></span>
-            <span class="step__text">En rådgivare ringer dig inom 24 timmar</span>
-          </li>
-          <li class="step" style="--i:2">
-            <span class="step__node" aria-hidden="true"><span>3</span></span>
-            <span class="step__text">Kostnadsfri rådgivning av elektriker</span>
-          </li>
-        </ol>
-      </section>
 
       <!-- trust card — 1:1 with the owner reference (dark, gold stars, centred) -->
       <section class="proof" aria-label="Omdöme och erfarenhet">
