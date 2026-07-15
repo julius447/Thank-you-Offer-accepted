@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tack för din förfrågan — Ampy</title>
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- decorative aurora corner art -->
+  <!-- decorative aurora corner art (recolored to teal/aurora) -->
   <img class="aurora aurora--top" src="assets/aurora-top.svg" alt="" aria-hidden="true">
   <img class="aurora aurora--bottom" src="assets/aurora-bottom.svg" alt="" aria-hidden="true">
 
@@ -20,19 +21,23 @@
 
       <img class="logo" src="../shared/assets/Ampy-logo.png" alt="Ampy" width="701" height="201">
 
-      <!-- animated teal check (inline for stroke-draw motion) -->
+      <!-- living teal check: glassy disc + halo pulse + tick draw -->
       <div class="check" aria-hidden="true">
-        <svg class="check__svg" width="174" height="174" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle class="check__ring" cx="87" cy="87" r="63" fill="url(#glassFill)" stroke="url(#ringStroke)" stroke-width="24"/>
-          <path class="check__tick" d="M118.582 66.3379L76.862 108.207L57.8984 89.1754" stroke="#00A991" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <span class="check__halo"></span>
+        <span class="check__halo check__halo--2"></span>
+        <svg class="check__svg" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="check__disc" cx="60" cy="60" r="46" fill="url(#glass)"/>
+          <circle class="check__rim" cx="60" cy="60" r="46" fill="none" stroke="url(#rim)" stroke-width="2"/>
+          <path class="check__tick" d="M82 47 L53.5 76 L38 60.5" fill="none" stroke="#00A991" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
           <defs>
-            <linearGradient id="glassFill" x1="33" y1="29" x2="148" y2="193" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#00a991"/>
-              <stop offset="1" stop-color="#5cc5b6"/>
-            </linearGradient>
-            <linearGradient id="ringStroke" x1="155" y1="148" x2="10" y2="42" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#ffffff" stop-opacity="0"/>
-              <stop offset="1" stop-color="#ffffff" stop-opacity="0.45"/>
+            <radialGradient id="glass" cx="0.42" cy="0.35" r="0.75">
+              <stop offset="0" stop-color="#7fe8cf" stop-opacity="0.42"/>
+              <stop offset="0.6" stop-color="#00a991" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#00a991" stop-opacity="0.10"/>
+            </radialGradient>
+            <linearGradient id="rim" x1="18" y1="16" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+              <stop offset="1" stop-color="#00a991" stop-opacity="0.25"/>
             </linearGradient>
           </defs>
         </svg>
@@ -45,52 +50,46 @@
 
       <!-- signature block: expectation ladder -->
       <section class="ladder" aria-labelledby="ladder-title">
-        <h2 class="ladder__title" id="ladder-title">Så här händer det nu</h2>
+        <p class="ladder__eyebrow" id="ladder-title">Nästa steg</p>
         <ol class="ladder__list">
           <li class="step" style="--i:0">
-            <span class="step__marker" aria-hidden="true">1</span>
+            <span class="step__node" aria-hidden="true"><span>1</span></span>
             <span class="step__text">Vi går igenom din förfrågan</span>
           </li>
           <li class="step" style="--i:1">
-            <span class="step__marker" aria-hidden="true">2</span>
+            <span class="step__node" aria-hidden="true"><span>2</span></span>
             <span class="step__text">En rådgivare ringer dig inom 24 timmar</span>
           </li>
           <li class="step" style="--i:2">
-            <span class="step__marker" aria-hidden="true">3</span>
-            <span class="step__text">Kostnadsfri rådgivning — helt utan förbindelse</span>
+            <span class="step__node" aria-hidden="true"><span>3</span></span>
+            <span class="step__text">Kostnadsfri rådgivning av elektriker</span>
           </li>
         </ol>
       </section>
 
-      <!-- trust strip -->
-      <section class="trust" aria-label="Omdömen och erfarenhet">
-        <div class="trust__primary">
-          <div class="trust__item">
-            <span class="stars" role="img" aria-label="5,0 av 5 i betyg på Google">
+      <!-- trust card — 1:1 with the owner reference (dark, gold stars, centred) -->
+      <section class="proof" aria-label="Omdöme och erfarenhet">
+        <div class="proof__inner">
+          <p class="proof__rating">
+            <span class="stars" role="img" aria-label="5 av 5 i betyg på Google">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.166L12 18.896l-7.335 3.864 1.401-8.166L.132 9.21l8.2-1.192z"/></svg>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.166L12 18.896l-7.335 3.864 1.401-8.166L.132 9.21l8.2-1.192z"/></svg>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.166L12 18.896l-7.335 3.864 1.401-8.166L.132 9.21l8.2-1.192z"/></svg>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.166L12 18.896l-7.335 3.864 1.401-8.166L.132 9.21l8.2-1.192z"/></svg>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.166L12 18.896l-7.335 3.864 1.401-8.166L.132 9.21l8.2-1.192z"/></svg>
             </span>
-            <span class="trust__label"><strong>5,0</strong> · Betyg på Google</span>
-          </div>
-          <span class="trust__divider" aria-hidden="true"></span>
-          <div class="trust__item">
-            <span class="trust__label"><strong>3&nbsp;000+</strong> genomförda installationer om året</span>
-          </div>
+            <span class="proof__ratingtext"><strong>5 av 5</strong> · Betyg på Google</span>
+          </p>
+          <p class="proof__count"><strong>3&nbsp;000+</strong> genomförda installationer om året</p>
         </div>
-        <p class="trust__secondary">Registrerat elinstallationsföretag</p>
       </section>
 
-      <!-- while you wait -->
-      <a class="wait" href="https://ampy.se/elinstallation/">
-        <span class="wait__body">
-          <span class="wait__eyebrow">Medan du väntar</span>
-          <span class="wait__line">Se allt vi kan hjälpa dig med hemma</span>
-          <span class="wait__link">Utforska våra eltjänster
-            <svg class="wait__arrow" viewBox="0 0 17 15" aria-hidden="true"><path d="M16.7071 8.07112C17.0976 7.68059 17.0976 7.04743 16.7071 6.65691L10.3431 0.292945C9.95262 -0.0975793 9.31946 -0.0975792 8.92893 0.292945C8.53841 0.683469 8.53841 1.31663 8.92893 1.70716L14.5858 7.36401L8.92893 13.0209C8.53841 13.4114 8.53841 14.0446 8.92893 14.4351C9.31946 14.8256 9.95262 14.8256 10.3431 14.4351L16.7071 8.07112ZM0 7.36401L8.74228e-08 8.36401L16 8.36401L16 7.36401L16 6.36401L-8.74228e-08 6.36401L0 7.36401Z"/></svg>
-          </span>
+      <!-- while you wait — centred -->
+      <a class="wait" href="https://ampy.se/elservice">
+        <span class="wait__eyebrow">Medan du väntar</span>
+        <span class="wait__line">Se allt vi kan hjälpa dig med hemma</span>
+        <span class="wait__link">Utforska våra eltjänster
+          <svg class="wait__arrow" viewBox="0 0 17 15" aria-hidden="true"><path d="M16.7071 8.07112C17.0976 7.68059 17.0976 7.04743 16.7071 6.65691L10.3431 0.292945C9.95262 -0.0975793 9.31946 -0.0975792 8.92893 0.292945C8.53841 0.683469 8.53841 1.31663 8.92893 1.70716L14.5858 7.36401L8.92893 13.0209C8.53841 13.4114 8.53841 14.0446 8.92893 14.4351C9.31946 14.8256 9.95262 14.8256 10.3431 14.4351L16.7071 8.07112ZM0 7.36401L8.74228e-08 8.36401L16 8.36401L16 7.36401L16 6.36401L-8.74228e-08 6.36401L0 7.36401Z"/></svg>
         </span>
       </a>
 
