@@ -29,7 +29,8 @@ body{
 .aurora--bottom{ bottom:0; left:0; width:clamp(15rem,22vw,28rem); height:auto; }
 
 .page{ position:relative; z-index:1; min-height:100vh; min-height:100dvh;
-  display:flex; align-items:center; justify-content:center; padding:clamp(2.4rem,4vw,4.8rem) var(--apspace-m); }
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(1.6rem,2vw,2rem);
+  padding:clamp(2.4rem,4vw,4.8rem) var(--apspace-m); }
 
 /* one contained card = the anchor */
 .card{
@@ -86,9 +87,8 @@ body{
 .cta svg{ width:1.4rem; height:1.3rem; fill:currentColor; transition:transform .2s var(--ease); }
 .cta:hover svg{ transform:translateX(3px); }
 
-/* ghost, below the card */
-.ghost{ position:relative; z-index:1; display:block; text-align:center; margin-top:2rem;
-  font-size:var(--aptext-sm); font-weight:500; color:var(--ink-soft); text-decoration:none;
+/* ghost, below the card (part of the centred group so it stays in view) */
+.ghost{ font-size:var(--aptext-sm); font-weight:500; color:var(--ink-soft); text-decoration:none;
   padding:var(--apspace-2xs) var(--apspace-s); border-radius:var(--apradius-full); transition:color .18s ease, background .18s ease; }
 .ghost:hover{ color:var(--teal-deep); background:rgba(0,169,145,.08); }
 

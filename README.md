@@ -1,14 +1,19 @@
-# Thank-you-Offer-accepted — Ampy tack-sida (design workspace)
+# Thank-you-Offer-accepted — Ampy tack-sida
 
-Universal post-`/offert` thank-you page. ONE page for every form submitter regardless of vertical.
-Locked spec: [`BRIEF.md`](BRIEF.md). Analysis origin: the `Thank-you` repo's `docs/analysis.md`.
+The **thank-you page** shown after the `/offert` contact form is submitted.
 
-**Live chooser (24/7):** https://julius447.github.io/Thank-you-Offer-accepted/
+**Final design (live):** https://julius447.github.io/Thank-you-Offer-accepted/v1/
 
-## Directions (pick one)
-- [`v1/`](v1/) — Ljus & varm (light aurora)
-- [`v2/`](v2/) — Midnatt-signatur (midnight brand moment)
-- [`v3/`](v3/) — Split / editorial (two-pane, full-viewport)
+## 🚀 Developer handoff → [`deliver/`](deliver/)
+Everything Chris needs to ship it in WordPress + Bricks, 1-to-1, no hand-conversion:
+FluentSnippets (CSS/PHP/JS), a Bricks paste-JSON, and a preview. **Start at [`deliver/README.md`](deliver/README.md).**
 
-`shared/` = real Ampy tokens + real SVG assets + logo, shared by all three.
-`current/` = the current live page, kept as the before-baseline.
+## Repo map
+- [`v1/`](v1/) — **the final, canonical design** (Direction A "Samlat kort"). Source HTML/CSS.
+- [`deliver/`](deliver/) — production bundle for Chris (scoped px CSS + shortcode + Bricks JSON + preview).
+- [`v2/`](v2/), [`v3/`](v3/) — the two alternative directions from selection (kept as history).
+- [`shared/`](shared/) — real Ampy tokens + SVG assets + logo.
+- [`current/`](current/) — the previous live page, kept as the before-baseline.
+- [`BRIEF.md`](BRIEF.md) — the locked spec the design was built to.
+
+The root [`index.html`](index.html) is the original 3-direction chooser (design history; v1 is the chosen one).

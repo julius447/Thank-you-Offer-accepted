@@ -1,0 +1,134 @@
+/* =========================================================================
+   Ampy tack-sida — production CSS  ·  FluentSnippets / Bricks
+   SELF-CONTAINED & SCOPED to .ampy-tack. All units in px (does NOT rely on
+   html{font-size:62.5%} or any external token file). Outfit is assumed to be
+   loaded site-wide on ampy.se; a system fallback is provided.
+   Paste this verbatim into a FluentSnippets CSS snippet.
+   ========================================================================= */
+
+.ampy-tack{
+  --at-ink:#0b1030;
+  --at-ink-soft:rgba(11,16,48,.62);
+  --at-teal:#00a991;
+  --at-teal-deep:#018271;
+  --at-gold:#f6b53d;
+  --at-ease:cubic-bezier(.16,.84,.44,1);
+  --at-ease-soft:cubic-bezier(.33,1,.68,1);
+
+  position:relative; z-index:0;
+  min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:clamp(16px, 2vw, 20px);
+  padding:clamp(24px, 4vw, 48px) clamp(16px, 1.25vw + 12px, 28px);
+  overflow:hidden;
+  box-sizing:border-box;
+  font-family:"Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color:var(--at-ink);
+  background:
+    radial-gradient(115% 85% at 14% -12%, rgba(0,169,145,.12) 0%, rgba(0,169,145,0) 46%),
+    radial-gradient(105% 75% at 94% 6%,  rgba(182,242,255,.48) 0%, rgba(182,242,255,0) 44%),
+    radial-gradient(120% 95% at 90% 112%, rgba(160,251,201,.28) 0%, rgba(160,251,201,0) 48%),
+    radial-gradient(115% 90% at 8% 104%, rgba(0,169,145,.08) 0%, rgba(0,169,145,0) 46%),
+    #f5f9ff;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.ampy-tack *,.ampy-tack *::before,.ampy-tack *::after{ box-sizing:border-box; }
+
+/* decorative aurora corner art (inline SVG in the markup) */
+.ampy-tack__aurora{ position:absolute; z-index:0; pointer-events:none; user-select:none; opacity:.8; height:auto; }
+.ampy-tack__aurora--top{ top:0; right:0; width:clamp(200px, 30vw, 400px); }
+.ampy-tack__aurora--bottom{ bottom:0; left:0; width:clamp(150px, 22vw, 280px); }
+
+/* the contained glass card = the anchor */
+.ampy-tack__card{
+  position:relative; z-index:1; width:100%; max-width:520px;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:clamp(18px, 2.4vw, 24px);
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:clamp(24px, 0.83vw + 21px, 32px);
+  box-shadow:0 30px 70px rgba(9,11,50,.12), inset 0 1px 0 rgba(255,255,255,.6);
+  -webkit-backdrop-filter:blur(16px) saturate(1.1);
+  backdrop-filter:blur(16px) saturate(1.1);
+  padding:clamp(32px, 4.5vw, 52px) clamp(28px, 4vw, 56px);
+}
+.ampy-tack__intro{ display:flex; flex-direction:column; align-items:center; gap:clamp(16px, 2.2vw, 22px); }
+
+/* living pale-mint check */
+.ampy-tack__check{ position:relative; width:clamp(88px, 11vw, 104px); height:clamp(88px, 11vw, 104px); display:grid; place-items:center; }
+.ampy-tack__check-svg{ position:relative; z-index:2; width:100%; height:100%; overflow:visible; }
+.ampy-tack__halo{
+  position:absolute; inset:6%; z-index:1; border-radius:50%;
+  background:radial-gradient(circle, rgba(85,255,154,.30) 0%, rgba(85,255,154,0) 72%);
+  animation:ampy-tack-halo 4s var(--at-ease-soft) infinite;
+}
+.ampy-tack__disc{ transform-origin:center; animation:ampy-tack-disc 640ms var(--at-ease) both; }
+.ampy-tack__tick{ stroke-dasharray:120; stroke-dashoffset:120; animation:ampy-tack-tick 560ms var(--at-ease) 300ms both; }
+@keyframes ampy-tack-disc{ 0%{ transform:scale(.62); opacity:0; } 62%{ transform:scale(1.05); } 100%{ transform:scale(1); opacity:1; } }
+@keyframes ampy-tack-tick{ to{ stroke-dashoffset:0; } }
+@keyframes ampy-tack-halo{ 0%{ transform:scale(.8); opacity:0; } 34%{ opacity:.8; } 100%{ transform:scale(1.4); opacity:0; } }
+
+/* hero */
+.ampy-tack__hero{ display:flex; flex-direction:column; gap:clamp(13px, 0.73vw + 10px, 20px); }
+.ampy-tack__title{
+  margin:0; font-size:clamp(28px, 1.25vw + 24px, 40px); line-height:1.14; font-weight:500;
+  letter-spacing:-.018em; color:var(--at-ink); white-space:nowrap;
+}
+.ampy-tack__sub{
+  margin:0; font-size:clamp(16px, 0.21vw + 15px, 18px); line-height:1.5; font-weight:400;
+  color:var(--at-ink-soft); white-space:nowrap;
+}
+
+/* proof — plain text (rating only) */
+.ampy-tack__proof{ display:flex; flex-direction:column; align-items:center; gap:5px; }
+.ampy-tack__rating{ margin:0; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:3px 7px; }
+.ampy-tack__stars{ display:inline-flex; gap:3px; }
+.ampy-tack__stars svg{ width:16px; height:16px; fill:var(--at-gold); }
+.ampy-tack__ratingtext{ font-size:clamp(14px, 0.21vw + 13px, 16px); font-weight:400; color:var(--at-ink-soft); line-height:1; }
+.ampy-tack__ratingtext strong{ font-weight:600; color:var(--at-ink); }
+
+/* hairline divider */
+.ampy-tack__divider{ width:60px; height:1px; border:0; margin:0;
+  background:linear-gradient(90deg, transparent, rgba(0,169,145,.35), transparent); }
+
+/* proportionate primary CTA */
+.ampy-tack__cta-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.ampy-tack__cta{
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  padding:14px 28px; border-radius:999px;
+  font-size:clamp(14px, 0.21vw + 13px, 16px); font-weight:600; color:#fff;
+  background:linear-gradient(135deg,#00b89c,#018271);
+  box-shadow:0 10px 24px rgba(0,169,145,.3);
+  transition:transform .2s var(--at-ease), box-shadow .2s var(--at-ease);
+}
+.ampy-tack__cta:hover{ transform:translateY(-2px); box-shadow:0 16px 30px rgba(0,169,145,.38); }
+.ampy-tack__cta svg{ width:14px; height:13px; fill:currentColor; transition:transform .2s var(--at-ease); }
+.ampy-tack__cta:hover svg{ transform:translateX(3px); }
+
+/* ghost back-to-home (part of the centred group) */
+.ampy-tack__ghost{
+  position:relative; z-index:1;
+  font-size:clamp(14px, 0.21vw + 13px, 16px); font-weight:500; color:var(--at-ink-soft);
+  text-decoration:none; padding:9px 16px; border-radius:999px;
+  transition:color .18s ease, background .18s ease;
+}
+.ampy-tack__ghost:hover{ color:var(--at-teal-deep); background:rgba(0,169,145,.08); }
+
+.ampy-tack a:focus-visible{ outline:3px solid var(--at-teal); outline-offset:3px; border-radius:12px; }
+
+/* mobile */
+@media (max-width:520px){
+  .ampy-tack__card{ padding:36px 24px; gap:20px; border-radius:clamp(16px, 0.42vw + 15px, 20px); }
+  .ampy-tack__title{ font-size:clamp(24px, 0.83vw + 21px, 32px); white-space:normal; text-wrap:balance; }
+  .ampy-tack__sub{ font-size:clamp(16px, 0.21vw + 15px, 18px); white-space:normal; text-wrap:balance; }
+  .ampy-tack__title br, .ampy-tack__sub br{ display:none; }
+}
+
+/* motion safety */
+@media (prefers-reduced-motion: reduce){
+  .ampy-tack__disc,.ampy-tack__tick,.ampy-tack__halo{ animation:none !important; }
+  .ampy-tack__tick{ stroke-dashoffset:0; }
+  .ampy-tack__halo{ opacity:.5; transform:scale(1.1); }
+  .ampy-tack__cta,.ampy-tack__cta svg,.ampy-tack__ghost{ transition:none; }
+}
