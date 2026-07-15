@@ -87,20 +87,20 @@ body{
 @keyframes halo{ 0%{ transform:scale(.8); opacity:0; } 34%{ opacity:.85; } 100%{ transform:scale(1.4); opacity:0; } }
 
 /* ---- hero --------------------------------------------------------------- */
-.hero{ display:flex; flex-direction:column; gap:var(--apspace-s); }
+.hero{ display:flex; flex-direction:column; gap:var(--apspace-s); width:100%; }
 .hero__title{
   margin:0;
-  font-size:var(--aptext-2xl);
-  line-height:1.12;
+  font-size:var(--aptext-3xl);        /* larger + wider to balance the cards below */
+  line-height:1.1;
   font-weight:600;
-  letter-spacing:-.02em;
+  letter-spacing:-.022em;
   color:var(--ink);
   text-wrap:balance;
 }
 .hero__sub{
   margin:0 auto;
-  max-width:38rem;
-  font-size:var(--aptext-m);
+  max-width:46rem;                     /* wider — was 38rem, now near card width */
+  font-size:var(--aptext-ml);
   line-height:1.5;
   font-weight:400;
   color:var(--ink-soft);
@@ -187,7 +187,8 @@ a:focus-visible{ outline:3px solid var(--teal); outline-offset:3px; border-radiu
 @media (max-width:520px){
   .page{ padding:clamp(3.6rem,9vw,5.2rem) var(--apspace-m); }
   .stack{ max-width:40rem; gap:2.8rem; }
-  .hero__title{ font-size:var(--aptext-xl); }
+  .hero__title{ font-size:var(--aptext-2xl); }
+  .hero__sub{ font-size:var(--aptext-mm); }
   .aurora--top{ width:50vw; opacity:.78; }
   .aurora--bottom{ width:42vw; opacity:.72; }
   .proof__count{ font-size:var(--aptext-m); }
