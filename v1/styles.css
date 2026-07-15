@@ -91,20 +91,20 @@ body{
 .hero__title{
   margin:0;
   font-size:var(--aptext-3xl);        /* larger + wider to balance the cards below */
-  line-height:1.1;
+  line-height:1.12;
   font-weight:600;
   letter-spacing:-.022em;
   color:var(--ink);
-  text-wrap:balance;
+  white-space:nowrap;                  /* honour the manual <br>; never re-wrap line 1 */
 }
 .hero__sub{
   margin:0 auto;
-  max-width:46rem;                     /* wider — was 38rem, now near card width */
+  max-width:none;
   font-size:var(--aptext-ml);
   line-height:1.5;
   font-weight:400;
   color:var(--ink-soft);
-  text-wrap:balance;
+  white-space:nowrap;                  /* honour the manual <br> */
 }
 
 /* ---- proof card — 1:1 with owner ref (dark, gold, centred) -------------- */
@@ -187,8 +187,10 @@ a:focus-visible{ outline:3px solid var(--teal); outline-offset:3px; border-radiu
 @media (max-width:520px){
   .page{ padding:clamp(3.6rem,9vw,5.2rem) var(--apspace-m); }
   .stack{ max-width:40rem; gap:2.8rem; }
-  .hero__title{ font-size:var(--aptext-2xl); }
-  .hero__sub{ font-size:var(--aptext-mm); }
+  /* mobile: wrap naturally. <br> hidden (space before it is preserved, so no word-join). */
+  .hero__title{ font-size:var(--aptext-2xl); white-space:normal; text-wrap:balance; }
+  .hero__sub{ font-size:var(--aptext-mm); white-space:normal; text-wrap:balance; }
+  .hero__title br, .hero__sub br{ display:none; }
   .aurora--top{ width:50vw; opacity:.78; }
   .aurora--bottom{ width:42vw; opacity:.72; }
   .proof__count{ font-size:var(--aptext-m); }
