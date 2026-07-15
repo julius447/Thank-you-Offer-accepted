@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tack-sida — omtag (3 riktningar) | Ampy</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/tokens.css">
+  <style>
+    :root{ --ink:#0b1030; --ink-soft:rgba(11,16,48,.66); --teal:#00a991; }
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ font-size:62.5%; }
+    body{ margin:0; font-family:"Outfit",system-ui,sans-serif; color:var(--ink);
+      background:radial-gradient(120% 80% at 12% -6%, rgba(0,169,145,.08) 0%, rgba(0,169,145,0) 44%), var(--apsky-mist); min-height:100vh; }
+    .wrap{ max-width:120rem; margin:0 auto; padding:clamp(3.2rem,5vw,6.4rem) var(--apspace-l) 8rem; }
+    header.top{ text-align:center; max-width:70rem; margin:0 auto clamp(2.8rem,4vw,4.8rem); }
+    h1{ margin:0 0 var(--apspace-s); font-size:var(--aptext-3xl); font-weight:600; letter-spacing:-.01em; }
+    .lead{ margin:0; font-size:var(--aptext-m); line-height:1.6; color:var(--ink-soft); }
+    .diag{ max-width:70rem; margin:2rem auto 0; text-align:left; background:rgba(255,255,255,.6); border:1px solid rgba(0,169,145,.16);
+      border-radius:var(--apradius-l); padding:var(--apspace-l); font-size:var(--aptext-sm); line-height:1.6; color:var(--ink-soft); }
+    .diag strong{ color:var(--ink); }
+    .grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--apspace-l); }
+    @media (max-width:920px){ .grid{ grid-template-columns:1fr; max-width:52rem; margin:0 auto; } }
+    .card{ background:var(--appure-white); border:1px solid rgba(0,169,145,.16); border-radius:var(--apradius-l);
+      box-shadow:0 2.4rem 5.6rem rgba(9,11,50,.09); overflow:hidden; display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease; }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 3.2rem 6.4rem rgba(9,11,50,.14); }
+    .card__shot{ display:block; border-bottom:1px solid rgba(9,11,50,.06); background:var(--apsky-mist); }
+    .card__shot img{ display:block; width:100%; height:23rem; object-fit:cover; object-position:top center; }
+    .card__body{ padding:var(--apspace-l); display:flex; flex-direction:column; gap:.6rem; flex:1; }
+    .card__eyebrow{ font-size:var(--aptext-xs); font-weight:600; text-transform:uppercase; letter-spacing:.14em; color:var(--teal); }
+    .card__name{ margin:0; font-size:var(--aptext-l); font-weight:600; }
+    .card__desc{ margin:.2rem 0 var(--apspace-m); font-size:var(--aptext-sm); line-height:1.55; color:var(--ink-soft); flex:1; }
+    .rec{ display:inline-block; font-size:var(--aptext-xs); font-weight:600; color:var(--teal); text-transform:uppercase; letter-spacing:.12em; }
+    .btn{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; font-weight:600; font-size:var(--aptext-sm);
+      padding:1.2rem 2.2rem; border-radius:var(--apradius-full); color:#fff; background:linear-gradient(135deg,#00b89c,#018271);
+      box-shadow:0 .8rem 2rem rgba(0,169,145,.28); transition:transform .15s ease; align-self:flex-start; }
+    .btn:hover{ transform:translateY(-1px); }
+    a:focus-visible{ outline:3px solid var(--teal); outline-offset:3px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Tack-sidan — omtag</h1>
+      <p class="lead">Tre skarpt olika sätt att lösa det som kändes off: <strong>ankare</strong> (innehållet flöt i tomrum) och <strong>hierarki</strong> (den gröna sekundär-rutan skrek högst). Samma innehåll och copy i alla tre — bara kompositionen skiljer. Välj en.</p>
+      <div class="diag">
+        <strong>Vad som är fixat i alla tre:</strong> bekräftelsen är hjälten igen; "Medan du väntar" är nedtonad till en proportionerlig knapp/länk (inte ett dominant grönt block); betygen ligger som lätt text; och innehållet har ett ankare så det inte flyter i tomrummet. Rubrikens radbrytning, checken och proof-siffrorna är oförändrade.
+      </div>
+    </header>
+
+    <div class="grid">
+      <article class="card">
+        <a class="card__shot" href="a.html"><img src="../docs/omtag/a-desktop.png" alt="Riktning A — Samlat kort"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning A</span>
+          <h2 class="card__name">Samlat kort</h2>
+          <p class="card__desc">Allt i ett lugnt glaskort som ankrar innehållet (som din ursprungliga sida, fast luftigare). "Medan du väntar" blir en proportionerlig teal-knapp. Renast och tryggast.</p>
+          <span class="rec">★ Min rekommendation</span>
+          <a class="btn" href="a.html">Öppna helskärm →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card__shot" href="b.html"><img src="../docs/omtag/b-desktop.png" alt="Riktning B — Rent, inga lådor"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning B</span>
+          <h2 class="card__name">Rent — inga lådor</h2>
+          <p class="card__desc">Ingen container alls. Det gröna blocket försvinner helt och blir en elegant textlänk under en hårfin linje. Minimalistiskt och lugnt — bekräftelsen är solklart hjälten.</p>
+          <a class="btn" href="b.html">Öppna helskärm →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card__shot" href="c.html"><img src="../docs/omtag/c-desktop.png" alt="Riktning C — Strukturerat kort"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning C</span>
+          <h2 class="card__name">Strukturerat kort</h2>
+          <p class="card__desc">Ett kort i två zoner: bekräftelsen på en mjuk mint-ton överst, en lugn "fot" med betyg + knapp under. Mest designat och premium — tydlig rytm.</p>
+          <a class="btn" href="c.html">Öppna helskärm →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
