@@ -1,0 +1,76 @@
+/* Faithful rebuild of the current ampy.se /thank-you/ section.
+   Geometry + tokens map 1:1 to current/thank-you.bricks.json.
+   Palette vars (--white/--color-21) are not in global-variables.min.css; the hex
+   fallbacks below are taken verbatim from the Bricks element JSON. */
+:root{
+  --white: hsl(0 0% 100%);          /* Color #19 = #ffffff */
+  --color-21: hsl(144 100% 67%);    /* button gradient stop 2 (bright green) */
+}
+
+*{box-sizing:border-box}
+html{font-size:62.5%}               /* 1rem = 10px, Ampy/Bricks convention (rem tokens assume this) */
+body{margin:0;font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1a1a1a}
+
+/* section#wdqfdx */
+.ty-section{
+  min-height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  background:#9c9c9c;                /* current staging bg — flagged in README as an upgrade point */
+  padding:var(--apspace-m) var(--apspace-m);
+}
+
+/* container#obaqbx (the card) */
+.ty-card{
+  position:relative;overflow:hidden;
+  width:100%;max-width:1000px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--white);
+  border-radius:var(--apradius-l);
+  padding:var(--apspace-3xl) var(--apspace-4xl);
+}
+
+/* decorative corner art (image#oaojik top-right, image#gmaqjq bottom-left) */
+.ty-deco{position:absolute;pointer-events:none;height:auto}
+.ty-deco--top{top:0;right:0;width:100%;max-width:320px}
+.ty-deco--bottom{bottom:0;left:0;width:100%;max-width:220px}
+
+/* content stack (block#iulaqi) */
+.ty-content{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+  row-gap:var(--apspace-l);
+  text-align:center;
+}
+.ty-icon{width:120px;height:120px;object-fit:contain;aspect-ratio:1}
+
+/* text group (div#vsetcx: heading#kayzoh + text#enpmsr) */
+.ty-text{display:flex;flex-direction:column;align-items:center;row-gap:var(--apspace-xs)}
+.ty-heading{
+  margin:0;
+  font-size:var(--aptext-2xl);font-weight:500;line-height:1.2;text-align:center;
+}
+.ty-para{margin:0;font-size:var(--aptext-m);text-align:center}
+
+/* button#cutazb — pill, gradient, arrow */
+.ty-btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  padding:var(--apspace-xs) var(--apspace-3xl);
+  border-radius:var(--apradius-full);
+  font-size:var(--aptext-mm);font-weight:500;line-height:1;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(90deg,#39c381 0%,var(--color-21) 100%);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.ty-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(57,195,129,.30)}
+.ty-btn:focus-visible{outline:3px solid #00a991;outline-offset:3px}
+.ty-btn-icon{width:16px;height:auto;filter:brightness(0) invert(1)}
+
+/* mobile_portrait overrides (from the JSON) */
+@media (max-width:640px){
+  .ty-section{padding:0;min-height:100vh}
+  .ty-card{max-width:100%;border-radius:0;min-height:100vh}
+  .ty-heading{font-size:var(--aptext-2-5xl);font-weight:600}
+  .ty-deco--top{max-width:200px}
+  .ty-deco--bottom{max-width:150px}
+  .ty-btn{font-size:var(--aptext-sm)}
+}
