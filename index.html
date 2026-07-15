@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tack-sida — tre riktningar | Ampy</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/tokens.css">
+  <style>
+    :root{ --shadow-primary: rgba(9,11,50,.10); --ink:#090b32; --ink-soft:rgba(9,11,50,.66); --teal:#00a991; }
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ font-size:62.5%; }
+    body{
+      margin:0; font-family:"Outfit",system-ui,sans-serif; color:var(--ink);
+      background:
+        radial-gradient(120% 80% at 12% -6%, rgba(0,169,145,.10) 0%, rgba(0,169,145,0) 44%),
+        radial-gradient(110% 80% at 92% 4%, rgba(182,242,255,.40) 0%, rgba(182,242,255,0) 42%),
+        var(--apsky-mist);
+      min-height:100vh; -webkit-font-smoothing:antialiased;
+    }
+    .wrap{ max-width:118rem; margin:0 auto; padding:clamp(3.2rem,5vw,7rem) var(--apspace-l) 8rem; }
+    header.top{ text-align:center; max-width:64rem; margin:0 auto clamp(3.2rem,4vw,5.6rem); }
+    .logo{ height:3.6rem; width:auto; margin-bottom:var(--apspace-m); }
+    h1{ margin:0 0 var(--apspace-s); font-size:var(--aptext-3xl); font-weight:600; letter-spacing:-.01em; line-height:1.1; }
+    .lead{ margin:0; font-size:var(--aptext-ml); line-height:1.5; color:var(--ink-soft); }
+    .grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--apspace-l); }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr; max-width:52rem; margin:0 auto; } }
+    .card{
+      background:var(--appure-white); border:1px solid rgba(0,169,145,.16);
+      border-radius:var(--apradius-l); box-shadow:0 2.4rem 5.6rem rgba(9,11,50,.09);
+      overflow:hidden; display:flex; flex-direction:column;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 3.2rem 6.4rem rgba(9,11,50,.14); }
+    .card__shot{ display:block; width:100%; border-bottom:1px solid rgba(9,11,50,.06); background:var(--apsky-mist); }
+    .card__shot img{ display:block; width:100%; height:24rem; object-fit:cover; object-position:top center; }
+    .card__body{ padding:var(--apspace-l); display:flex; flex-direction:column; gap:var(--apspace-2xs); flex:1; }
+    .card__eyebrow{ font-size:var(--aptext-xs); font-weight:600; text-transform:uppercase; letter-spacing:.14em; color:var(--teal); }
+    .card__name{ margin:0; font-size:var(--aptext-l); font-weight:600; }
+    .card__desc{ margin:.4rem 0 var(--apspace-m); font-size:var(--aptext-sm); line-height:1.5; color:var(--ink-soft); flex:1; }
+    .card__links{ display:flex; gap:var(--apspace-xs); flex-wrap:wrap; }
+    .btn{
+      display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; font-weight:500;
+      font-size:var(--aptext-sm); padding:var(--apspace-2xs) var(--apspace-m);
+      border-radius:var(--apradius-full); transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn--primary{ color:#fff; background:linear-gradient(135deg,#00a991,#018a77); box-shadow:0 .8rem 2rem rgba(0,169,145,.28); }
+    .btn--primary:hover{ transform:translateY(-1px); box-shadow:0 1.2rem 2.6rem rgba(0,169,145,.36); }
+    .btn--ghost{ color:var(--ink-soft); border:1px solid rgba(9,11,50,.16); }
+    .btn--ghost:hover{ color:var(--teal); border-color:rgba(0,169,145,.4); background:rgba(0,169,145,.06); }
+    a:focus-visible{ outline:3px solid var(--teal); outline-offset:3px; }
+    .note{
+      margin:clamp(3.2rem,4vw,5.6rem) auto 0; max-width:82rem; text-align:left;
+      background:rgba(255,255,255,.6); border:1px solid rgba(0,169,145,.16); border-radius:var(--apradius-l);
+      padding:var(--apspace-l); font-size:var(--aptext-sm); line-height:1.6; color:var(--ink-soft);
+    }
+    .note strong{ color:var(--ink); font-weight:600; }
+    .note h2{ margin:0 0 var(--apspace-xs); font-size:var(--aptext-m); color:var(--ink); }
+    .note ul{ margin:var(--apspace-2xs) 0 0; padding-left:1.8rem; }
+    .rec{ display:inline-block; margin-top:.6rem; font-size:var(--aptext-xs); font-weight:600; color:var(--teal); text-transform:uppercase; letter-spacing:.12em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <img class="logo" src="shared/assets/Ampy-logo.png" alt="Ampy">
+      <h1>Tack-sidan — tre riktningar</h1>
+      <p class="lead">Samma sida, tre uttryck. Alla tre delar exakt samma innehåll, copy och struktur — en universell tack-sida för <em>alla</em> som fyllt i formuläret, oavsett ingång. Bara den visuella riktningen skiljer. Välj en.</p>
+    </header>
+
+    <div class="grid">
+      <article class="card">
+        <a class="card__shot" href="v1/index.html"><img src="docs/previews/v1-desktop.png" alt="Förhandsvisning av riktning 1 — Ljus & varm"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning 1</span>
+          <h2 class="card__name">Ljus &amp; varm</h2>
+          <p class="card__desc">Ljus sky-mist med mjuk teal-aurora. Lugnast och mest inbjudande — soluppgångsren skandinavisk känsla, närmast dagens sida men premium.</p>
+          <div class="card__links">
+            <a class="btn btn--primary" href="v1/index.html">Öppna helskärm →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card__shot" href="v2/index.html"><img src="docs/previews/v2-desktop.png" alt="Förhandsvisning av riktning 2 — Midnatt-signatur"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning 2</span>
+          <h2 class="card__name">Midnatt-signatur</h2>
+          <p class="card__desc">Midnattsblått aurora-ögonblick med glödande teal-check och mörk glas-stege. Djärvast och mest premium — Linear/Vercel-känsla i Ampy-norrsken. Matchar din bifogade mörka proof-remsa.</p>
+          <div class="card__links">
+            <a class="btn btn--primary" href="v2/index.html">Öppna helskärm →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card__shot" href="v3/index.html"><img src="docs/previews/v3-desktop.png" alt="Förhandsvisning av riktning 3 — Split / editorial"></a>
+        <div class="card__body">
+          <span class="card__eyebrow">Riktning 3</span>
+          <h2 class="card__name">Split / editorial</h2>
+          <p class="card__desc">Tvådelad helskärm — känslan till vänster (midnatt + check), momentum till höger (stege + proof). Använder hela skärmen bäst, ryms på en skärm utan scroll.</p>
+          <span class="rec">★ Min rekommendation</span>
+          <div class="card__links">
+            <a class="btn btn--primary" href="v3/index.html">Öppna helskärm →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">
+      <h2>Vad som är låst i alla tre</h2>
+      Behåller <strong>"!"</strong> i rubriken · <strong>rådgivare</strong> (ej handläggare) · <strong>24 timmar</strong> (ägar-bekräftad) · teal <strong>#00a991</strong> (inga off-brand grönt) · helskärm · logga överst · "Till startsidan" nedtonad · <strong>förväntans-stegen</strong> "Så här händer det nu" som signatur · äkta proof endast: <strong>5,0 Google + 3 000+ installationer/år</strong> · "Medan du väntar → eltjänster" för self-upsell.
+      <h2 style="margin-top:1.8rem">Öppna [GAP] — ägar-input innan Bricks-port</h2>
+      <ul>
+        <li><strong>Eltjänster-länk:</strong> pekar nu på <code>ampy.se/elinstallation/</code> — bekräfta att det är rätt "alla eltjänster"-sida.</li>
+        <li><strong>Google-betyget:</strong> foretagsdata flaggar 5,0 som rights-unclear (loggat "5,0 · 16 omdömen"). Bygger din väg; säg till om du vill visa antalet (mer trovärdigt + ärligare).</li>
+        <li><strong>Instrumentering</strong> (GA4/Meta-event) är medvetet utelämnad tills vidare — läggs till tyst vid Bricks-port.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

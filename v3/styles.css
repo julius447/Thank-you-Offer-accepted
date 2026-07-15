@@ -1,0 +1,387 @@
+/* =========================================================================
+   Ampy tack-sida — Direction v3: "Split / editorial" (two-pane, full-viewport)
+   LEFT = midnight-aurora confirmation (carries the colour) · RIGHT = clean momentum
+   Real ap* tokens from ../shared/tokens.css. One teal accent system across both panes.
+   ========================================================================= */
+
+:root{
+  font-size:62.5%;               /* 1rem = 10px, required for the rem tokens */
+  --shadow-primary:rgba(9,11,50,.12);   /* tokens.css references this */
+
+  --v3-gold:#ffc93c;
+  --v3-line:rgba(9,11,50,.10);
+  --v3-teal-soft:rgba(0,169,145,.10);
+}
+
+*,
+*::before,
+*::after{box-sizing:border-box;}
+
+html{font-size:62.5%;}
+
+body{
+  margin:0;
+  font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--apmidnight-blue);
+  background:var(--apmidnight-blue);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,p{overflow-wrap:break-word;}
+
+/* ---- The split shell: full viewport, two editorial columns ---------------- */
+.split{
+  display:grid;
+  grid-template-columns:minmax(0,5fr) minmax(0,6fr);
+  min-height:100vh;
+  min-height:100dvh;
+}
+
+.pane{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:var(--apspace-2xl) var(--apspace-xl);
+}
+
+/* ============================ LEFT — confirmation ========================== */
+.pane--confirm{
+  overflow:hidden;
+  color:var(--appure-white);
+  background:
+    radial-gradient(120% 90% at 22% 12%, rgba(0,169,145,.30) 0%, rgba(0,169,145,0) 55%),
+    radial-gradient(120% 90% at 88% 96%, rgba(85,255,154,.20) 0%, rgba(85,255,154,0) 55%),
+    linear-gradient(160deg,#0c1046 0%, var(--apmidnight-blue) 62%);
+}
+
+.corner{
+  position:absolute;
+  pointer-events:none;
+  opacity:.5;
+  filter:saturate(1.05);
+}
+.corner--top{
+  top:0;right:0;
+  width:min(46%,34rem);
+  transform:translate(14%,-16%);
+}
+.corner--bottom{
+  bottom:0;left:0;
+  width:min(38%,26rem);
+  transform:translate(-16%,16%);
+}
+
+.confirm-inner{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+  max-width:46rem;
+  width:100%;
+}
+
+.logo{
+  width:clamp(11rem,10vw,14rem);
+  height:auto;
+  margin-bottom:var(--apspace-2xl);
+  filter:brightness(0) invert(1);   /* black wordmark -> white on the dark pane */
+}
+
+.check{
+  margin-bottom:var(--apspace-l);
+}
+.check-svg{
+  width:clamp(9rem,9vw,11rem);
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 1.2rem 3.2rem rgba(0,169,145,.35));
+}
+
+.confirm-h1{
+  margin:0 0 var(--apspace-s);
+  font-size:var(--aptext-4xl);
+  font-weight:600;
+  line-height:1.06;
+  letter-spacing:-.01em;
+  color:var(--appure-white);
+}
+
+.confirm-sub{
+  margin:0;
+  font-size:var(--aptext-ml);
+  font-weight:400;
+  line-height:1.5;
+  color:rgba(245,249,255,.82);
+  max-width:38rem;
+}
+
+/* ============================ RIGHT — momentum ============================= */
+.pane--momentum{
+  background:var(--apsky-mist);
+}
+
+.momentum-inner{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  max-width:50rem;
+  gap:var(--apspace-l);
+}
+
+/* ---- The ladder: hero of the page ---------------------------------------- */
+.ladder-title{
+  margin:0 0 var(--apspace-l);
+  font-size:var(--aptext-xl);
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.005em;
+  color:var(--apmidnight-blue);
+}
+
+.ladder-steps{
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+/* the connecting spine between nodes */
+.ladder-steps::before{
+  content:"";
+  position:absolute;
+  left:2.05rem;
+  top:2.2rem;
+  bottom:2.2rem;
+  width:2px;
+  background:linear-gradient(180deg,var(--apteal-core),rgba(0,169,145,.25));
+  border-radius:2px;
+}
+
+.step{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:var(--apspace-m);
+  padding:var(--apspace-xs) 0;
+  min-width:0;
+}
+.step + .step{margin-top:var(--apspace-xs);}
+
+.step-node{
+  position:relative;
+  z-index:1;
+  flex:0 0 auto;
+  width:4.2rem;
+  height:4.2rem;
+  display:grid;
+  place-items:center;
+  border-radius:var(--apradius-full);
+  background:var(--appure-white);
+  border:2px solid var(--apteal-core);
+  color:var(--apteal-core);
+  font-size:var(--aptext-ml);
+  font-weight:600;
+  box-shadow:0 .4rem 1.2rem rgba(0,169,145,.18);
+}
+
+.step-text{
+  min-width:0;
+  font-size:var(--aptext-m);
+  font-weight:500;
+  line-height:1.4;
+  color:var(--apmidnight-blue);
+}
+
+/* ---- Trust strip: real proof only ---------------------------------------- */
+.trust{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:var(--apspace-s) var(--apspace-m);
+  padding:var(--apspace-m) var(--apspace-l);
+  background:var(--appure-white);
+  border:1px solid var(--v3-line);
+  border-radius:var(--apradius-l);
+  box-shadow:var(--apshadow-m);
+}
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:var(--apspace-2xs);
+  min-width:0;
+}
+.trust-item--rating{flex-direction:column;align-items:flex-start;gap:.4rem;}
+.stars-fill{
+  font-size:var(--aptext-m);
+  letter-spacing:.2rem;
+  line-height:1;
+  color:var(--v3-gold);
+}
+.trust-label{
+  font-size:var(--aptext-sm);
+  font-weight:400;
+  line-height:1.35;
+  color:var(--apcharcoal-gray);
+}
+.trust-label strong{
+  font-weight:600;
+  color:var(--apmidnight-blue);
+}
+.trust-divider{
+  width:1px;
+  align-self:stretch;
+  min-height:3.2rem;
+  background:var(--v3-line);
+}
+.trust-secondary{
+  margin:calc(var(--apspace-l) * -0.5) 0 0;
+  padding-left:var(--apspace-2xs);
+  font-size:var(--aptext-xs);
+  font-weight:400;
+  color:rgba(51,51,51,.7);
+}
+
+/* ---- "Medan du väntar" self-upsell card ---------------------------------- */
+.explore-card{
+  display:block;
+  text-decoration:none;
+  padding:var(--apspace-l);
+  border-radius:var(--apradius-l);
+  background:
+    linear-gradient(150deg,var(--v3-teal-soft) 0%, rgba(0,169,145,0) 60%),
+    var(--appure-white);
+  border:1px solid rgba(0,169,145,.22);
+  box-shadow:var(--apshadow-s);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.explore-card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--apshadow-l);
+  border-color:var(--apteal-core);
+}
+.explore-eyebrow{
+  display:block;
+  font-size:var(--aptext-xs);
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--apteal-core);
+  margin-bottom:.6rem;
+}
+.explore-line{
+  display:block;
+  font-size:var(--aptext-mm);
+  font-weight:500;
+  line-height:1.3;
+  color:var(--apmidnight-blue);
+  margin-bottom:var(--apspace-s);
+}
+.explore-link{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--apspace-2xs);
+  font-size:var(--aptext-sm);
+  font-weight:600;
+  color:var(--apteal-core);
+}
+.explore-arrow{
+  width:1.5rem;height:auto;
+  transition:transform .2s ease;
+  /* black arrow -> teal to match the CTA accent system */
+  filter:brightness(0) saturate(100%) invert(45%) sepia(93%) saturate(1352%) hue-rotate(129deg) brightness(93%) contrast(101%);
+}
+.explore-card:hover .explore-arrow{transform:translateX(4px);}
+
+/* ---- Ghost back-to-home: small, low-emphasis ----------------------------- */
+.ghost{
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  padding:var(--apspace-2xs) var(--apspace-xs);
+  margin-top:calc(var(--apspace-s) * -0.3);
+  font-size:var(--aptext-sm);
+  font-weight:500;
+  text-decoration:none;
+  color:rgba(51,51,51,.72);
+  border-radius:var(--apradius-s);
+  transition:color .2s ease, background .2s ease;
+}
+.ghost:hover{
+  color:var(--apmidnight-blue);
+  background:rgba(9,11,50,.04);
+}
+
+/* ---- Focus states (a11y) ------------------------------------------------- */
+a:focus-visible{
+  outline:3px solid var(--apteal-core);
+  outline-offset:3px;
+  border-radius:var(--apradius-s);
+}
+.pane--confirm a:focus-visible{
+  outline-color:var(--apcrystal-blue);
+}
+
+/* ============================ Signature motion ============================ */
+/* ONE signature: the check draws in, then the ladder steps stagger in. */
+.check-mark{
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:v3-draw .55s .25s ease-out forwards;
+}
+@keyframes v3-draw{to{stroke-dashoffset:0;}}
+
+.step{
+  opacity:0;
+  transform:translateY(10px);
+  animation:v3-rise .5s ease-out forwards;
+  animation-delay:calc(.65s + var(--i) * .13s);
+}
+@keyframes v3-rise{to{opacity:1;transform:translateY(0);}}
+
+@media (prefers-reduced-motion:reduce){
+  .check-mark{animation:none;stroke-dashoffset:0;}
+  .step{animation:none;opacity:1;transform:none;}
+}
+
+/* ============================ Responsive ================================== */
+/* Below the split breakpoint: one clean stacked column, full-bleed, no cramp. */
+@media (max-width:860px){
+  .split{
+    grid-template-columns:minmax(0,1fr);
+    min-height:auto;
+  }
+  .pane{
+    padding:var(--apspace-2xl) var(--apspace-l);
+  }
+  .pane--confirm{
+    min-height:auto;
+    padding-top:var(--apspace-3xl);
+    padding-bottom:var(--apspace-2xl);
+  }
+  .confirm-inner{
+    max-width:52rem;
+    margin:0 auto;
+  }
+  .pane--momentum{
+    padding-top:var(--apspace-2xl);
+    padding-bottom:var(--apspace-3xl);
+  }
+  .momentum-inner{
+    max-width:52rem;
+    margin:0 auto;
+  }
+  .confirm-h1{font-size:var(--aptext-3xl);}
+  .corner--top{width:min(52%,26rem);}
+  .corner--bottom{width:min(44%,20rem);}
+}
+
+@media (max-width:420px){
+  .pane{padding-left:var(--apspace-m);padding-right:var(--apspace-m);}
+  .logo{margin-bottom:var(--apspace-xl);}
+  .trust{padding:var(--apspace-s) var(--apspace-m);}
+  .trust-divider{display:none;}
+}

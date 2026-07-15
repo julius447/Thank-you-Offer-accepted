@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tack — Ampy</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Decorative aurora corner art over the midnight field -->
+  <img class="aurora aurora--top" src="../shared/assets/thank-you-top.svg" alt="" aria-hidden="true" />
+  <img class="aurora aurora--bottom" src="../shared/assets/thank-you-bottom.svg" alt="" aria-hidden="true" />
+
+  <main class="stage">
+    <div class="panel">
+
+      <img class="brand" src="../shared/assets/Ampy-logo.png" alt="Ampy" width="140" />
+
+      <!-- Signature: the teal check draws in on the glowing disc -->
+      <div class="check" aria-hidden="true">
+        <span class="check__halo"></span>
+        <svg class="check__svg" width="174" height="174" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect class="check__disc" x="18" y="18" width="138" height="138" rx="69" fill="url(#discFill)" stroke="url(#discRing)" stroke-width="1.5" />
+          <path class="check__tick" d="M118.582 66.3379L76.862 108.207L57.8984 89.1754"
+                stroke="#00A991" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+          <defs>
+            <radialGradient id="discFill" cx="0.5" cy="0.35" r="0.75">
+              <stop offset="0" stop-color="#00a991" stop-opacity="0.38" />
+              <stop offset="0.55" stop-color="#0d7f8f" stop-opacity="0.20" />
+              <stop offset="1" stop-color="#090b32" stop-opacity="0.05" />
+            </radialGradient>
+            <linearGradient id="discRing" x1="30" y1="30" x2="150" y2="150" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#b6f2ff" stop-opacity="0.55" />
+              <stop offset="1" stop-color="#00a991" stop-opacity="0.25" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <header class="head">
+        <h1 class="head__title">Din förfrågan har blivit mottagen!</h1>
+        <p class="head__sub">En av våra rådgivare kommer att kontakta dig inom kort.</p>
+      </header>
+
+      <!-- Signature block: expectation ladder -->
+      <section class="ladder" aria-labelledby="ladder-title">
+        <h2 class="ladder__title" id="ladder-title">Så här händer det nu</h2>
+        <ol class="ladder__list">
+          <li class="step">
+            <span class="step__marker" aria-hidden="true">1</span>
+            <span class="step__text">Vi går igenom din förfrågan</span>
+          </li>
+          <li class="step">
+            <span class="step__marker" aria-hidden="true">2</span>
+            <span class="step__text">En rådgivare ringer dig inom 24 timmar</span>
+          </li>
+          <li class="step">
+            <span class="step__marker" aria-hidden="true">3</span>
+            <span class="step__text">Kostnadsfri rådgivning — helt utan förbindelse</span>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Trust strip -->
+      <section class="trust" aria-label="Omdömen och erfarenhet">
+        <div class="trust__item">
+          <span class="stars" role="img" aria-label="5,0 av 5 i betyg på Google">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.18 21 12 17.27 5.82 21 7.2 13.87l-5-4.87 6.9-.74z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.18 21 12 17.27 5.82 21 7.2 13.87l-5-4.87 6.9-.74z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.18 21 12 17.27 5.82 21 7.2 13.87l-5-4.87 6.9-.74z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.18 21 12 17.27 5.82 21 7.2 13.87l-5-4.87 6.9-.74z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.18 21 12 17.27 5.82 21 7.2 13.87l-5-4.87 6.9-.74z"/></svg>
+          </span>
+          <span class="trust__label"><strong>5,0</strong> · Betyg på Google</span>
+        </div>
+        <span class="trust__divider" aria-hidden="true"></span>
+        <div class="trust__item">
+          <span class="trust__big">3&nbsp;000+</span>
+          <span class="trust__label">genomförda installationer om året</span>
+        </div>
+      </section>
+
+      <!-- Medan du väntar -->
+      <a class="waiting" href="https://ampy.se/elinstallation/">
+        <span class="waiting__body">
+          <span class="waiting__eyebrow">Medan du väntar</span>
+          <span class="waiting__line">Se allt vi kan hjälpa dig med hemma</span>
+          <span class="waiting__link">Utforska våra eltjänster <span class="waiting__arrow" aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <!-- Secondary ghost -->
+      <a class="ghost" href="https://ampy.se/">Till startsidan</a>
+
+    </div>
+  </main>
+</body>
+</html>

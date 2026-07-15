@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tack — din förfrågan har blivit mottagen | Ampy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="split">
+
+    <!-- LEFT: the confirmation (midnight-aurora pane, carries the colour) -->
+    <section class="pane pane--confirm" aria-labelledby="tack-h1">
+      <img class="corner corner--top" src="../shared/assets/thank-you-top.svg" alt="" aria-hidden="true">
+      <img class="corner corner--bottom" src="../shared/assets/thank-you-bottom.svg" alt="" aria-hidden="true">
+      <div class="confirm-inner">
+        <img class="logo" src="../shared/assets/Ampy-logo.png" alt="Ampy">
+
+        <div class="check" aria-hidden="true">
+          <svg class="check-svg" xmlns="http://www.w3.org/2000/svg" width="174" height="174" viewBox="0 0 174 174" fill="none">
+            <rect x="12" y="12" width="150" height="150" rx="75" fill="url(#v3g0)" fill-opacity="0.2" stroke="url(#v3g1)" stroke-width="24"></rect>
+            <path class="check-mark" pathLength="100" d="M118.582 66.3379L76.862 108.207L57.8984 89.1754" stroke="#00A991" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <defs>
+              <linearGradient id="v3g0" x1="33.1429" y1="29" x2="147.762" y2="193.333" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#55FF9A"></stop><stop offset="0.41" stop-color="#55FF9A"></stop><stop offset="1" stop-color="#55FF9A"></stop>
+              </linearGradient>
+              <linearGradient id="v3g1" x1="155.087" y1="147.522" x2="10.0841" y2="41.9009" gradientUnits="userSpaceOnUse">
+                <stop stop-color="white" stop-opacity="0"></stop><stop offset="1" stop-color="white" stop-opacity="0.2"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <h1 id="tack-h1" class="confirm-h1">Din förfrågan har blivit mottagen!</h1>
+        <p class="confirm-sub">En av våra rådgivare kommer att kontakta dig inom kort.</p>
+      </div>
+    </section>
+
+    <!-- RIGHT: the momentum (clean sky-mist pane) -->
+    <section class="pane pane--momentum" aria-labelledby="ladder-title">
+      <div class="momentum-inner">
+
+        <div class="ladder">
+          <h2 id="ladder-title" class="ladder-title">Så här händer det nu</h2>
+          <ol class="ladder-steps">
+            <li class="step" style="--i:0">
+              <span class="step-node" aria-hidden="true">1</span>
+              <span class="step-text">Vi går igenom din förfrågan</span>
+            </li>
+            <li class="step" style="--i:1">
+              <span class="step-node" aria-hidden="true">2</span>
+              <span class="step-text">En rådgivare ringer dig inom 24 timmar</span>
+            </li>
+            <li class="step" style="--i:2">
+              <span class="step-node" aria-hidden="true">3</span>
+              <span class="step-text">Kostnadsfri rådgivning — helt utan förbindelse</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="trust">
+          <div class="trust-item trust-item--rating">
+            <span class="stars" role="img" aria-label="5,0 av 5 i betyg på Google">
+              <span class="stars-fill" aria-hidden="true">★★★★★</span>
+            </span>
+            <span class="trust-label"><strong>5,0</strong> · Betyg på Google</span>
+          </div>
+          <span class="trust-divider" aria-hidden="true"></span>
+          <div class="trust-item">
+            <span class="trust-label"><strong>3 000+</strong> genomförda installationer om året</span>
+          </div>
+        </div>
+        <p class="trust-secondary">Registrerat elinstallationsföretag</p>
+
+        <a class="explore-card" href="https://ampy.se/elinstallation/">
+          <span class="explore-eyebrow">Medan du väntar</span>
+          <span class="explore-line">Se allt vi kan hjälpa dig med hemma</span>
+          <span class="explore-link">Utforska våra eltjänster
+            <img class="explore-arrow" src="../shared/assets/Arrow-3.svg" alt="" aria-hidden="true">
+          </span>
+        </a>
+
+        <a class="ghost" href="https://ampy.se/">Till startsidan</a>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
