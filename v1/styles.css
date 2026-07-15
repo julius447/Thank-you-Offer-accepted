@@ -90,58 +90,44 @@ body{
 .hero{ display:flex; flex-direction:column; gap:var(--apspace-s); width:100%; }
 .hero__title{
   margin:0;
-  font-size:var(--aptext-3xl);        /* larger + wider to balance the cards below */
-  line-height:1.12;
-  font-weight:600;
-  letter-spacing:-.022em;
+  font-size:var(--aptext-2-5xl);       /* smaller than before, per owner */
+  line-height:1.14;
+  font-weight:500;                     /* less bold, per owner */
+  letter-spacing:-.018em;
   color:var(--ink);
   white-space:nowrap;                  /* honour the manual <br>; never re-wrap line 1 */
 }
 .hero__sub{
   margin:0 auto;
   max-width:none;
-  font-size:var(--aptext-ml);
+  font-size:var(--aptext-m);
   line-height:1.5;
   font-weight:400;
   color:var(--ink-soft);
   white-space:nowrap;                  /* honour the manual <br> */
 }
 
-/* ---- proof card — 1:1 with owner ref (dark, gold, centred) -------------- */
+/* ---- proof — plain text on the light surface (no container) ------------- */
 .proof{
   width:100%;
-  border-radius:var(--apradius-l);
-  overflow:hidden;
-  box-shadow:0 2.2rem 5rem rgba(9,11,50,.22);
-}
-.proof__inner{
-  position:relative;
   display:flex; flex-direction:column; align-items:center;
-  gap:clamp(1rem,1.6vw,1.4rem);
-  padding:clamp(2.4rem,3.4vw,3.2rem) var(--apspace-l);
-  text-align:center;
-  color:#fff;
-  background:
-    linear-gradient(180deg, rgba(9,11,50,.82) 0%, rgba(9,11,50,.72) 100%),
-    url("../shared/assets/Modernt-hus-ampy-fixat-efter-stromavbrott.webp");
-  background-size:cover;
-  background-position:center 50%;
+  gap:.5rem;
 }
 .proof__rating{
   margin:0;
   display:flex; align-items:center; justify-content:center;
-  flex-wrap:wrap; gap:.4rem 1rem;
+  flex-wrap:wrap; gap:.3rem .7rem;
 }
-.stars{ display:inline-flex; gap:.35rem; }
-.stars svg{ width:2rem; height:2rem; fill:var(--gold); filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)); }
-.proof__ratingtext{ font-size:var(--aptext-mm); font-weight:400; color:rgba(255,255,255,.86); line-height:1; }
-.proof__ratingtext strong{ font-weight:700; color:#fff; }
+.stars{ display:inline-flex; gap:.3rem; }
+.stars svg{ width:1.6rem; height:1.6rem; fill:var(--gold); }
+.proof__ratingtext{ font-size:var(--aptext-sm); font-weight:400; color:var(--ink-soft); line-height:1; }
+.proof__ratingtext strong{ font-weight:600; color:var(--ink); }
 .proof__count{
   margin:0;
-  font-size:var(--aptext-mm); font-weight:400; color:rgba(255,255,255,.9); line-height:1.25;
+  font-size:var(--aptext-sm); font-weight:400; color:var(--ink-soft); line-height:1.3;
   text-wrap:balance;
 }
-.proof__count strong{ font-weight:700; color:#fff; }
+.proof__count strong{ font-weight:600; color:var(--ink); }
 
 /* ---- while you wait — centred ------------------------------------------ */
 .wait{
@@ -188,8 +174,8 @@ a:focus-visible{ outline:3px solid var(--teal); outline-offset:3px; border-radiu
   .page{ padding:clamp(3.6rem,9vw,5.2rem) var(--apspace-m); }
   .stack{ max-width:40rem; gap:2.8rem; }
   /* mobile: wrap naturally. <br> hidden (space before it is preserved, so no word-join). */
-  .hero__title{ font-size:var(--aptext-2xl); white-space:normal; text-wrap:balance; }
-  .hero__sub{ font-size:var(--aptext-mm); white-space:normal; text-wrap:balance; }
+  .hero__title{ font-size:var(--aptext-xl); white-space:normal; text-wrap:balance; }
+  .hero__sub{ font-size:var(--aptext-m); white-space:normal; text-wrap:balance; }
   .hero__title br, .hero__sub br{ display:none; }
   .aurora--top{ width:50vw; opacity:.78; }
   .aurora--bottom{ width:42vw; opacity:.72; }
